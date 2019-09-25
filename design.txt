@@ -1,0 +1,59 @@
+Obviously not going to work like this but we'll see.
+
+I want a command line argument in which I can use the following tool
+
+# Transport
+to [directory]
+
+which will take care of 
+'cd /full/path/to/directory/'
+
+if there is any sort of conflict of interest, what will happen is that 
+
+""
+Where to?
+[1] /one/path/
+[2] /two/path/
+[3] /three/path/
+"""
+
+Or if there's nothing
+
+[Invalid directory]
+
+
+
+# Add
+
+I can use to -a 'name' 
+
+Simply adds it to an index file located in 
+/Users/blz/.whereto
+
+
+
+# Edit
+Edit will simply open the index and will be able to be customized so you can remove the file and go on with your life. Alternatively we can do a simple
+
+to -x 'name'
+
+which will print
+
+[Invalid directory]
+
+'
+Which one?
+[1] .././.
+[2] /./.
+'
+
+or 
+[name] removed. 
+
+
+
+
+# Future?
+Add support for names, so I can cd to a directory like 'oops' and it'll know where to.
+Make sure names are unique. 
+
