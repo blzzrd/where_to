@@ -1,3 +1,10 @@
 #!/bin/bash
 
-python where_to.py
+scriptz() { 
+echo "Hello world"
+}
+# cd $1
+scriptz
+# cd return result.
+result=`python transport.py -h`
+echo $result

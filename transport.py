@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import pdb
 import os
 import sys
 
@@ -51,7 +51,7 @@ def transport(key):
         i = 1
         print("[0] Cancel")
         for result in results:
-            print(f"[{i}]: {result}")
+            print("[{}]: {}".format(i, result))
             i += 1
 
         print("Which option would you like to travel to?")
@@ -69,7 +69,7 @@ def transport(key):
 
         if result > 0 and result < res_count:
             # GO result
-
+            pass
 
     else:
         print("Too vague of a keyword - Clean the index or use a more specific keyword.")
@@ -141,20 +141,20 @@ def usage():
     -e | --edit // Opens the index to edit.
     -h | --help // Pull up this usage screen.
     """)
+    return
 
 
 if __name__ == '__main__':
-
     for arg in sys.argv:
-        if arg == '-a' or '--add':
+        if arg == '-a' or arg == '--add':
             add()
             break
 
-        if arg == '-e' or '--edit':
+        if arg == '-e' or arg == '--edit':
             edit()
             break
 
-        if arg == '-h' or '--help':
+        if arg == '-h' or arg == '--help':
             usage()
             break
         """
@@ -163,6 +163,6 @@ if __name__ == '__main__':
             break
         """
 
-        transport()
+        #transport()
         # if arg is right then transport
 
