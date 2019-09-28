@@ -41,6 +41,7 @@ def transport(key):
         return 0
     elif res_count == 1:
         # GO
+        pass
     elif res_count > 2 and res <= 9:
         i = 1
         print("[0] Cancel")
@@ -82,15 +83,20 @@ def go(path):
 
 
 
-def add(entry):
+def add():
+    """
+    add will open the index file and write in the current directory.
+    RTRN --
+    Returns a 0.
+
+    ARGS --
+    n/a
+    """
     index = get_index()
-
     f = open(index, 'a+')
-    f.write(entry)
-
-    cwd = os.getcwd()
+    f.write(os.getcwd())
     f.close()
-
+    return 0
 
 def edit():
     # simply open the file in vim.
@@ -113,7 +119,7 @@ if __name__ == '__main__':
     for arg in sys.argv:
 
         if arg == '-a':
-            add(os.getcwd())
+            add()
             break
 
         if arg == '-e':
