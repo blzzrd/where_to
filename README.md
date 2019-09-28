@@ -11,4 +11,5 @@ To install where_to, install the following product.
 Ensure that to.sh is in chmod +x form (can be executed)
 
 
+Install the file onto any PATH.
 
