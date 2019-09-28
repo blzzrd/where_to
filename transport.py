@@ -95,15 +95,15 @@ def add(entry):
 def edit():
     # simply open the file in vim.
     # if file doesn't exist - output error.
-
+    subprocess.run(["vim", get_index()])
 
 def remove():
     # Remove an argument in the python file.
 
-
+    pass
 
 def control():
-
+    pass
 
 
 
@@ -111,17 +111,22 @@ def control():
 if __name__ == '__main__':
 
     for arg in sys.argv:
-        exe = []
 
-        # if arg == '-a':
-            # add
+        if arg == '-a':
+            add(os.getcwd())
+            break
 
-        # if arg == '-e':
-            # edit
+        if arg == '-e':
+            edit()
+            break
 
-        # if arg == '-x':
-            # remove
+"""
+        if arg == '-x':
+            remove()
+            break
+"""
 
+        transport()
         # if arg is right then transport
 
 
