@@ -1,10 +1,9 @@
 #!/bin/bash
 
-scriptz() { 
-echo "Hello world"
-}
-# cd $1
-scriptz
-# cd return result.
-result=`python transport.py -h`
-echo $result
+eval "python transport.py $@"
+dir=$(pbpaste)
+if [ ${dir:0:2} == "cd" ];
+then
+echo $dir
+#eval $dir
+fi

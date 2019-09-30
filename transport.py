@@ -86,9 +86,9 @@ def add():
     ARGS --
     n/a
     """
-    index = get_index() + '\n'
+    index = get_index()
     f = open(index, 'a+')
-    f.write(os.getcwd())
+    f.write(os.getcwd() + '\n')
     f.close()
     return 0
 
@@ -100,7 +100,7 @@ def edit():
     ARGS --
     n/a
     """
-    subprocess.run(["vim", get_index()])
+    subprocess.call(["vim", get_index()])
     return
 
 def remove():
@@ -143,7 +143,7 @@ def go(path):
     ARGS --
     path - The path to the file that you are going to cd into.
     """
-    pyperclip.coppy("cd " + path)
+    pyperclip.copy("cd " + path)
     return 0
 
 if __name__ == '__main__':
@@ -166,10 +166,15 @@ if __name__ == '__main__':
             break
         """
 
-         if len(sys.argv) > 2:
+        if len(sys.argv) == 1:
+            print("No args provided.")
+            usage()
+            exit(1)
+
+        if len(sys.argv) > 2:
             print("Error: Too many args.")
             usage()
-            exit(1):
+            exit(1)
 
     transport(sys.argv[1])
     exit(0)
