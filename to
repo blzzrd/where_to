@@ -1,0 +1,60 @@
+#!/bin/bash
+
+FILE="$HOME/.whereto"
+
+while test $# -gt 0; do
+    case "$1" in 
+        -h|--help)
+            h
+            exit 0
+            ;;
+        -a|--add)
+            a
+            exit 0 
+            ;;
+        -e|--edit)
+            e
+            exit 0
+            ;;
+        *)
+            
+            break
+            ;;
+    esac
+done
+
+function h()
+{
+echo "where to? - directory teleporter."
+echo "Teleport to a directory in which you have previously set a portal."
+echo "to [flags] [location]"
+echo "Flags:"
+echo "-a | --add         Adds a portal to the current directory in the index."
+echo "-e | --edit        Edit the index."
+echo "-h | --help        Show usage."
+}
+
+# add - append the cwd to the file.
+# check for any duplicates before hand.
+function a()
+{
+pwd >> $FILE
+}
+
+
+# edit - open file in vim
+function e()
+{
+eval vim $FILE
+} 
+
+# go - uh
+function go()
+{
+
+}
+
+
+
+
+# teleport 

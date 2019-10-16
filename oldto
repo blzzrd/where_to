@@ -1,9 +1,0 @@
-#!/bin/bash
-
-eval "python transport.py $@"
-dir=$(pbpaste)
-if [ ${dir:0:2} == "cd" ];
-then
-echo $dir
-#eval $dir
-fi
